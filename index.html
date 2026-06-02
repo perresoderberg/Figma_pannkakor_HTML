@@ -1,61 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/styles.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
-<div class="container">
-
-    <div class="hero">
-        <img src="images/header_pannkakor.png" alt="Pannkakor">
-    </div>
-
-    <div class="content">
-        <h1>Enkelt recept på pannkakor</h1>
-
-        <div class="intro">
-            Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="images/logo.png" alt="Logo" />
         </div>
-
-        <h2>Ingredienser</h2>
-        <p>För 4 portioner</p>
-
-        <ul>
-            <li>2 1/2 dl vetemjöl</li>
-            <li>1/2 tsk salt</li>
-            <li>6 dl mjölk</li>
-            <li>3 ägg</li>
-            <li>smör</li>
-            <li>sylt eller bär</li>
+        <ul class="nav-links">
+          <li><a href="#">Recept</a></li>
+          <li><a href="#">Om oss</a></li>
+          <li><a href="#">Kontakt</a></li>
         </ul>
-
-        <h2>Så här gör du</h2>
-
-        <ol>
-            <li>Blanda mjöl och salt.</li>
-            <li>Vispa i mjölk.</li>
-            <li>Tillsätt ägg.</li>
-            <li>Låt vila.</li>
-            <li>Stek.</li>
-        </ol>
-
-        <h2>Serveringsförslag</h2>
-
-        <div class="images">
-            <div class="image-wrapper">
-                <img src="images/footer_pannkakor_1.png">
+        <select id="theme">
+          <option value="light-theme">Ljus</option>
+          <option value="dark-theme">Mörk</option>
+        </select>
+        <button class="login-btn">Logga in</button>
+      </nav>
+      <header class="hero-header">
+        <h1>Oavsiktligt Ätbart</h1>
+        <p>
+          Här hittar du pannkaksrecept som är testade av personer med begränsad
+          erfarenhet och obegränsat självförtroende.
+        </p>
+      </header>
+      <main class="content">
+        <section class="recipe-grid">
+          <article class="recipe-card">
+            <div class="image-container">
+              <img src="images/recept_7.jpg" alt="Recept 4" />
             </div>
-            <div class="image-wrapper">
-                <img src="images/footer_pannkakor_2.png">
+            <h2>Söndagsmat</h2>
+            <h3>Ingredienser</h3>
+            <ul>
+              <li>En telefon</li>
+              <li>En pizzeria</li>
+              <li>Någon som levererar</li>
+            </ul>
+            <h3>Så här gör du</h3>
+            <ol>
+              <li>Ring.</li>
+              <li>Vänta.</li>
+              <li>Äntligen njut av något från denna sida.</li>
+            </ol>
+          </article>
+
+          <article class="recipe-card">
+            <div class="image-container">
+                <img src="images/recept_2.jpg" alt="Recept 1" />
             </div>
-        </div>
+            <h2>Inte goda Pannkakor</h2>
+            <h3>Ingredienser</h3>
+            <ul>
+              <li>6 dl vetemjöl</li>
+              <li>2 dl mjölk</li>
+              <li>0.5 ägg</li>
+              <li>1 nypa tålamod</li>
+            </ul>
+
+            <h3>Så här gör du</h3>
+            <ol>
+              <li>Blanda ingredienserna.</li>
+              <li>Vispa med klumpar kvar.</li>
+              <li>Stek första pannkakan.</li>
+              <li>Acceptera resultatet.</li>
+            </ol>
+          </article>
+
+          <article class="recipe-card">
+
+            <div class="image-container">
+              <img src="images/recept_3.jpg" alt="Recept 2" />
+            </div>
+            <h2>Måndagspannkakor</h2>
+            <h3>Ingredienser</h3>
+            <ul>
+              <li>Mjöl</li>
+              <li>Mjöl</li>
+              <li>Mjöl</li>
+            </ul>
+
+            <h3>Så här gör du</h3>
+            <ol>
+              <li>Rör.</li>
+              <li>Ät.</li>
+            </ol>
+          </article>
+
+          <article class="recipe-card">
+
+            <div class="image-container">
+              <img src="images/recept_5.jpg" alt="Recept 5" />
+            </div>
+            <h2>En god pannkaka</h2>
+            <h3>Ingredienser</h3>
+            <ul>
+              <li>Chokladsås</li>
+              <li>Andra saker</li>
+            </ul>
+            <h3>Så här gör du</h3>
+            <ol>
+              <li>Blanda det du har.</li>
+              <li>Hoppas proportionerna stämmer.</li>
+              <li>Stek.</li>
+              <li>Servera med det som finns kvar i kylskåpet.</li>
+            </ol>
+          </article>
+
+          <article class="recipe-card">
+            <div class="image-container">
+              <img src="images/recept_6.jpg" alt="Recept 6" />
+            </div>
+            <h2>Förvånansvärt få misstag receptet</h2>
+            <h3>Ingredienser</h3>
+            <ul>
+              <li>Mjöl</li>
+              <li>Mjölk</li>
+              <li>Ägg</li>
+            </ul>
+
+            <h3>Så här gör du</h3>
+            <ol>
+              <li>Följ receptet.</li>
+              <li>Ät.</li>
+            </ol>
+          </article>
+        </section>
+      </main>
+      <!-- End of main content -->
     </div>
+    <!-- End of container -->
+    <footer>
+      <p>© 2025 Oavsiktligt Ätbart</p>
+    </footer>
 
-</div>
-
-</body>
+    <script>
+      document.getElementById("theme").addEventListener("change", function () {
+        if (this.value === "dark-theme") {
+          document.body.classList.add("dark-theme");
+        } else {
+          document.body.classList.remove("dark-theme");
+        }
+      });
+    </script>
+  </body>
 </html>

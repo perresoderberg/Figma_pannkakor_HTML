@@ -1,86 +1,247 @@
+/* Globala Variabler */
+
+:root {
+  --background-color: #fff8f0;
+  --text-color: #333;
+  --border-color: #000000;
+  --navigation-color: rgb(0, 0, 0);
+  --navigation-background-color: #cfb9a0;
+  --navigation-hover-color: blueviolet;
+  --main-header-color: #92400e;
+  --header-color: #92400e;
+  --recipe-card-background-color: rgb(255, 255, 255);
+  --login-text-color: rgb(0, 0, 0);
+  --login--background-color: #ff6b6b;
+}
+
+.dark-theme {
+  --background-color: #1a1a1a;
+  --text-color: #fff;
+  --border-color: #ffffff;
+  --navigation-color: rgb(255, 255, 255);
+  --navigation-background-color: #38322c;
+  --navigation-hover-color: blueviolet;
+  --header-color: #ffdeca;
+  --recipe-card-background-color: rgba(255, 255, 255, 0.103);
+  --login-text-color: rgb(0, 0, 0);
+  --login--background-color: #ffdfdf;
+}
+/* RESET*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* End of RESET*/
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-    max-width: 900px;
-    margin: auto;
-    background: white;
+  /*
+        Take the smaller of:
+            90% of viewport width
+            1300px;
+        Reason -> your content would stretch across huge monitors and become hard to read.
+    */
+  /* width: min(95%, 1300px);
+  margin-inline: auto; */
+  padding-inline: 1rem;
+  background: var(--background-color);
 }
 
-/* HERO IMAGE */
+#theme {
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+
+.hero-header {
+  text-align: center;
+  color: var(--text-color);
+  padding: 3rem 2rem;
+
+  h1 {
+    color: var(--header-color);
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    font-family: "Permanent Marker", cursive;
+  }
+  p {
+    font-size: clamp(0.75rem, 2vw, 1.25rem);
+    margin: 0.5rem auto;
+    line-height: 1.6;
+    font-family: "Fredoka", sans-serif;
+  }
+}
+
 .hero {
-    overflow: hidden;
-}
-
-.hero img {
+  overflow: hidden;
+  height: clamp(250px, 40vw, 500px);
+  img {
     width: 100%;
-    display: block;
+    object-fit: cover;
+  }
 }
 
-/* CONTENT */
-.content {
-    padding: 16px;
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* space-between: pushes the first item to the far left and the last item to the far right */
+  align-items: center; /* in the cross-flexed axes */
+  padding: 1rem 2rem; /* top and bottom get 1rem, left and right get 2rem */
+  background: var(--navigation-background-color);
+  border-bottom: 1px solid var(--border-color);
+
+  a {
+    color: var(--navigation-color);
+
+    &:hover {
+      color: var(--navigation-hover-color);
+    }
+  }
 }
 
-h1 {
-    color: #c62828;
-    font-size: 24px;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
 }
 
-.intro {
-    background: #eee;
-    padding: 10px;
-    margin: 15px 0;
+.nav-links {
+  display: flex;
+  gap: clamp(
+    1rem,
+    5vw,
+    5rem
+  ); /* Min 1rem, Max 5rem -> Otherwise adjustable to the screen  */
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: var(--navigation-color);
+    font-weight: bold;
+  }
 }
 
-h2 {
-    margin-top: 20px;
+.login-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--login--background-color);
+  color: var(--login-text-color);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-ul, ol {
+/* CSS för korten */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 1.5rem;
+  justify-content: center; /* Cross-Ases -> how the entire grid is positioned horizontally */
+  margin-top: 2rem;
+}
+
+/* CSS for recipe-card */
+.recipe-card {
+  background: var(--recipe-card-background-color);
+  border-radius: 8px;
+  overflow: hidden; /* Hide anything that extends outside the element. No excess space in recipe-card. */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* shadow around an element */
+  padding: clamp(10px, 2vw, 20px); /* Make padding responsive */
+
+  transition:
+  /* Animate size. Whenever transform changes then animate over 0.3 seconds */
+    transform 0.2s ease,
+    /* Animate shadow around an element. makes the card feel like it's lifting off the page */
+    box-shadow 0.2s ease;
+
+  .image-container {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill the box completely and crop excess parts */
+
+    /* Make the zoom come from the center */
+    transform-origin: center center;
+
+    /* increases zoom as the viewport gets narrower */
+    transform: scale(clamp(1, calc(1000px / 100vw), 2));
+  }
+
+  h2 {
+    /* Recipe title */
+    color: var(--header-color);
+    font-size: clamp(16px, 2.5vw, 24px);
+    margin: clamp(12px, 1.5vw, 18px);
+    text-align: center;
+  }
+  h3 {
+    /* 'Ingredienser' title */
+    /* 'Så här gör du' title */
+    font-size: clamp(12px, 1.5vw, 16px);
+  }
+
+  ul li,
+  ol li {
+    /* Content of Ingredienser and 'Så här gör du' */
+    font-size: clamp(11px, 1.5vw, 14px);
+  }
+
+  ul,
+  ol {
     padding-left: 20px;
+  }
+
+  &:hover {
+    /* Zoom in the card 10% */
+    /* transform: scale(1.1); */
+
+    /* makes the card appear to lift */
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+/* End of CSS for recipe-card */
+
+.content {
+  padding: 16px;
 }
 
-/* DESKTOP IMAGES */
 .images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .image-wrapper {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* MOBILE OVERRIDE */
-@media (max-width: 768px) {
-
-    .container {
-        max-width: 100%;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    .images {
-        grid-template-columns: 1fr;
-    }
-
-	.image-wrapper img,
-	.hero img {
-		width: 200%;
-		max-width: none;
-		height: auto;
-		transform: translateX(-25%);
-	}
+  width: 100%;
+  height: auto;
+  display: block;
 }
