@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <title>Oavsiktligt Ätbart</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Oavsiktligt Ätbart" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Recept</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <select id="theme">
+        <option value="light-theme">Ljus</option>
+        <option value="dark-theme">Mörk</option>
+      </select>
+      <button class="login-btn">Logga in</button>
+    </nav>
+    <header class="hero-header">
+      <h1>Oavsiktligt Ätbart</h1>
+      <p>Beskriv dina misslyckanden nedan:</p>
+    </header>
+
+    <div class="form-container">
+      <h1>Kontakta oss</h1>
+
+      <form action="#" method="post">
+        <div class="form-item">
+          <label for="name">Namn</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Ex. Anna Svensson"
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="email">E-post <span aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Ex. anna.svensson@gmail.com"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="phone">Telefon <span aria-hidden="true">*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            placeholder="Ex. 070-1234567"
+            autocomplete="tel"
+          />
+        </div>
+
+        <div class="form-item">
+          <label for="subject">Ärende</label>
+          <select id="subject" name="subject">
+            <option value="" disabled selected>Välj ett alternativ</option>
+            <option value="question">Fråga</option>
+            <option value="complaint">Klagomål</option>
+            <option value="praise">Beröm</option>
+            <option value="other">Annat</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>
+            Hur vill du bli kontaktad? <span aria-hidden="true">*</span>
+          </legend>
+
+          <label>
+            <input type="radio" name="contact" value="email" required />
+            E-post
+          </label>
+
+          <label>
+            <input type="radio" name="contact" value="phone" required />
+            Telefon
+          </label>
+        </fieldset>
+
+        <div class="form-item">
+          <label for="message"
+            >Meddelande <span aria-hidden="true">*</span></label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            placeholder="Beskriv ditt ärende.."
+          ></textarea>
+        </div>
+
+        <div class="form-item">
+          <label for="attachment">Bifoga fil</label>
+          <input
+            type="file"
+            accept="image/*"
+            id="attachment"
+            name="attachment"
+          />
+        </div>
+
+        <div class="form-item checkbox-item">
+          <label>
+            <input type="checkbox" name="newsletter" />
+            Prenumerera på nyhetsbrev
+          </label>
+        </div>
+
+        <button type="submit" class="send-message-btn">Skicka</button>
+      </form>
+    </div>
+  </body>
+</html>

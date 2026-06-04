@@ -1,6 +1,6 @@
 # Pannkakor Recipe Page
 
-A simple responsive webpage that displays a classic Swedish pancake recipe.
+A simple responsive webpage that displays classic Swedish pancake recipes.
 
 ## Description
 
@@ -9,23 +9,32 @@ The layout adapts using responsive design techniques, and images are cropped dif
 
 ## Technologies
 
-* HTML5
-* CSS3 (responsive design with media queries)
+- HTML5
+- CSS3 (responsive design)
 
 ## Features
 
-* Responsive layout (grid-based)
-* Image cropping on mobile (center 50% visible)
-* Clean and simple UI
+- Responsive layout (grid-based)
+- Image cropping on mobile (center 50% visible)
+- Clean and simple UI
 
 ## Project Structure
 
 ```
 index.html
-styles.css
-header_pannkakor.png
-footer_pannkakor_1.png
-footer_pannkakor_2.png
+contact.html
+review.html
+
+css/styles.css
+css/form.css
+images/logo.png
+images/recept_1.jpg
+images/recept_2.jpg
+images/recept_3.jpg
+images/recept_4.jpg
+images/recept_5.jpg
+images/recept_6.jpg
+images/recept_7.jpg
 ```
 
 ## How to Run
@@ -36,5 +45,6 @@ footer_pannkakor_2.png
 ## Purpose
 
 This project was created to practice:
-* Responsive web design
-* CSS layout techniques (Grid vs Flexbox)
+
+- Responsive web design
+- CSS layout techniques (Grid vs Flexbox)

@@ -152,19 +152,19 @@ body {
   }
 }
 
+/* CSS för korten */
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 350px);
-  gap: clamp(0.5rem, 1vw, 1.5rem);
-  justify-content: center; /* how the entire grid is positioned horizontally */
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 1.5rem;
+  justify-content: center; /* In the flexed axes -> how the entire grid is positioned horizontally */
   margin-top: 2rem;
 }
+
 /* CSS for recipe-card */
 .recipe-card {
-  display: flex;
-  flex-direction: column;
   background: var(--recipe-card-background-color);
-  border-radius: clamp(4px, 1vw, 8px);
+  border-radius: 8px;
   overflow: hidden; /* Hide anything that extends outside the element. No excess space in recipe-card. */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* shadow around an element */
   padding: clamp(10px, 2vw, 20px); /* Make padding responsive */
@@ -215,31 +215,21 @@ body {
     padding-left: 20px;
   }
 
-  h3:nth-of-type(2) {
-    margin-top: 5px;
-  }
-
   /* Review styles */
 
   .review-link-container {
-    margin-top: auto;
-    display: flex;
-
-    justify-content: center;
+    margin-top: 1rem;
   }
 
   .review-link {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+
     padding: 0.75rem;
     border-radius: 6px;
     text-decoration: none; /* no underline on the link */
     font-weight: bold;
-    margin: clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 2rem) 0
-      clamp(1rem, 2vw, 2rem); /* no margin at the bottom */
-
-    font-size: clamp(12px, 1.5vw, 16px);
 
     background: var(--review-link-background-color);
     color: var(--review-link-text-color);
@@ -270,11 +260,4 @@ body {
   width: 100%;
   height: auto;
   display: block;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  border-top: 1px solid var(--border-color);
 }
